@@ -24,7 +24,7 @@ type providerPoolThreadSafe struct {
 // (combination of AWS profile and region).
 // Providers are launched only once in case of duplicate clientKeys.
 func NewProviderPool(ctx context.Context, clientKeys []aws.ClientKey, version, installDir string,
-	timeout time.Duration) (
+	timeout time.Duration, skipRegionValidation bool) (
 	map[aws.ClientKey]provider.TerraformProvider, error) {
 
 	metaPlugin, err := provider.Install("aws", version, installDir)
@@ -86,7 +86,7 @@ func NewProviderPool(ctx context.Context, clientKeys []aws.ClientKey, version, i
 					"skip_credentials_validation": cty.UnknownVal(cty.DynamicPseudoType),
 					"skip_get_ec2_platforms":      cty.UnknownVal(cty.DynamicPseudoType),
 					"skip_metadata_api_check":     cty.UnknownVal(cty.DynamicPseudoType),
-					"skip_region_validation":      cty.UnknownVal(cty.DynamicPseudoType),
+					"skip_region_validation":      cty.BoolVal(skipRegionValidation),
 					"skip_requesting_account_id":  cty.UnknownVal(cty.DynamicPseudoType),
 					"token":                       cty.UnknownVal(cty.DynamicPseudoType),
 				})
