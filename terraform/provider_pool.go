@@ -9,8 +9,8 @@ import (
 
 	"github.com/apex/log"
 	"github.com/fatih/color"
-	"github.com/jckuester/awstools-lib/aws"
-	"github.com/jckuester/awstools-lib/terraform/provider"
+	"github.com/dmitsf/awstools-lib/aws"
+	"github.com/dmitsf/awstools-lib/terraform/provider"
 	"github.com/zclconf/go-cty/cty"
 )
 

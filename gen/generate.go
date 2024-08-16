@@ -11,8 +11,8 @@ import (
 
 	"github.com/apex/log"
 	"github.com/apex/log/handlers/cli"
-	"github.com/jckuester/awstools-lib/gen/aws"
-	"github.com/jckuester/awstools-lib/gen/terraform"
+	"github.com/dmitsf/awstools-lib/gen/aws"
+	"github.com/dmitsf/awstools-lib/gen/terraform"
 )
 
 const (
