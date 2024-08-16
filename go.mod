@@ -1,4 +1,4 @@
-module github.com/jckuester/awstools-lib
+module github.com/dmitsf/awstools-lib
 
 go 1.17
 
